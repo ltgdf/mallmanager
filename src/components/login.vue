@@ -25,7 +25,7 @@ export default {
     },
     methods: {
         async handlelogin() {
-            console.log(this.formdata)
+            // console.log(this.formdata)
             const res = await this.$http.post('login', this.formdata)
             // console.log(res)
             const {

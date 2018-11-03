@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+import moment from 'moment'
 // 导入element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -13,6 +14,12 @@ Vue.use(ElementUI)
 Vue.use(HttpTool)
 
 Vue.config.productionTip = false
+
+Vue.filter('dategs', (v) => {
+    // YYYY-MM-DD hh:mm:ss
+    v = moment(v).format('YYYY-MM-DD')
+    return v
+})
 
 new Vue({
     el: '#app',
