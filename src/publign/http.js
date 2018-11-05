@@ -7,8 +7,12 @@ HttpTool.install = (Vue) => {
 
     //axios拦截器
     axios.interceptors.request.use(function(config) {
-        console.log(config)
-            // 在发送请求之前做些什么
+
+        const AUTH_TOKEN = sessionStorage.getItem('token')
+        config.headers.common['Authorization'] = AUTH_TOKEN;
+
+        // console.log(config)
+        // 在发送请求之前做些什么
         return config;
     }, function(error) {
         // 对请求错误做些什么

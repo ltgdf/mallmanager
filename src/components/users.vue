@@ -43,7 +43,7 @@
                 </el-switch>
             </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" min-width="180">
             <template slot-scope="scope">
                 <el-button type="primary" icon="el-icon-edit" circle plain @click="editUser(scope.row.id)"></el-button>
                 <el-button type="danger" icon="el-icon-delete" circle plain @click="deleteUser(scope.row)"></el-button>

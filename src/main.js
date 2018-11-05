@@ -9,6 +9,9 @@ import HttpTool from './publign/http'
 import router from './router'
 import '@/assets/css/index.css'
 
+// 面包屑
+import myBread from '@/view/my-Bread'
+
 Vue.use(ElementUI)
     // use会自动执行install方法
 Vue.use(HttpTool)
@@ -21,6 +24,7 @@ Vue.filter('dategs', (v) => {
     return v
 })
 
+Vue.component(myBread.name, myBread)
 new Vue({
     el: '#app',
     router,
