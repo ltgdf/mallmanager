@@ -27,6 +27,8 @@ HttpTool.install = (Vue) => {
         // 对响应错误做点什么
         return Promise.reject(error);
     });
+
+    // 将axios挂载到Vue的原型上（将axios做成VUe插件的形式）
     Vue.prototype.$http = axios
 }
 

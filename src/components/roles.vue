@@ -48,7 +48,7 @@
     </el-table>
     <!-- 分配权限的对话框 -->
     <el-dialog title="分配权限" :visible.sync="dialogVisible" width="40%">
-        <template slot-scope="scopr">
+        <template slot-scope="scope">
             <!-- 树型结构 -->
             <el-tree ref="checkkey" :data="treelist" :props="defaultProps" show-checkbox node-key="id" :default-checked-keys="checkedArr" :default-expanded-keys="expandedArr"></el-tree>
         </template>
@@ -120,7 +120,7 @@ export default {
             const res = await this.$http.get('rights/tree')
             // console.log(res)
             this.treelist = res.data.data
-            //expandedArr赋值
+            //展开节点数组expandedArr赋值
             const arr = res.data.data
             const newarr = []
             arr.forEach(item1 => {
